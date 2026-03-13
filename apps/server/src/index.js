@@ -7,6 +7,8 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const connectDB = require('./config/db');
 
+const app = express();
+
 // Create uploads directory only if NOT running on Vercel
 if (!process.env.VERCEL && !fs.existsSync('uploads')) {
     fs.mkdirSync('uploads', { recursive: true });
